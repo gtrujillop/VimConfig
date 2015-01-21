@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/var/lib/postgresql/9.3/main'
+let g:netrw_dirhist_2='/var/lib/postgresql/9.3/main/pg_log'
+let g:netrw_dirhist_3='/var/lib/postgresql/9.3/main'
+let g:netrw_dirhist_4='/var/lib/postgresql/9.3/main/pg_log'
+let g:netrw_dirhist_5='/var/lib/postgresql/9.3/main'
+let g:netrw_dirhist_6='/var/lib/postgresql/9.3/main/pg_log'
+let g:netrw_dirhist_7='/home/gtrujillo/dev/submissions/config/initializers'
+let g:netrw_dirhist_8='/home/gtrujillo/dev/m3/app/assets/javascripts/assignment_wizard'
