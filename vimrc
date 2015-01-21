@@ -15,7 +15,11 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 "Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
+Bundle 'scrooloose/nerdtree'
+Bundle 'jpo/vim-railscasts-theme'
+
 "Bundle 'tpope/vim-cucumber'
+
 "Bundle 'tpope/vim-git'
 "Bundle 'godlygeek/tabular'
 "Bundle 'matchit.zip'
@@ -78,6 +82,8 @@ runtime! macros/matchit.vim
 set ai 
 set sw=2
 set et
+set mouse=a
+
 
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
@@ -167,9 +173,9 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " set list
 
 " useful key bindings
-imap uu _
-imap hh =>
-imap aa @
+"imap uu _
+"imap hh =>
+"imap aa @
 
 " better movement on wrapped lines
 nnoremap j gj
@@ -182,13 +188,8 @@ nnoremap ; :
 vnoremap < <gv
 vnoremap > >gv
 
-
-
-" colors
-" colorscheme ir_black
-set background=dark
-colorscheme solarized
-" colorscheme vibrantink
+" Color
+colorscheme railscasts
 
 " NERDTree
 :noremap <leader>n :NERDTreeToggle<cr>
