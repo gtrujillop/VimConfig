@@ -16,7 +16,7 @@ Bundle 'tpope/vim-fugitive'
 "Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'scrooloose/nerdtree'
-Bundle 'jpo/vim-railscasts-theme'
+"Bundle 'jpo/vim-railscasts-theme'
 
 "Bundle 'tpope/vim-cucumber'
 
