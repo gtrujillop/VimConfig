@@ -16,6 +16,7 @@ Bundle 'tpope/vim-fugitive'
 "Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'scrooloose/nerdtree'
+"Plugin 'rking/ag'
 "Bundle 'jpo/vim-railscasts-theme'
 
 "Bundle 'tpope/vim-cucumber'
@@ -125,8 +126,8 @@ map <Leader>cc :!cucumber %<CR>
  
 " split vertically with <leader> v
 " split horizontall with <leader> s
-" nmap <leader>v :vsplit<CR> <C-w><C-w>
-" nmap <leader>s :split<CR> <C-w><C-w>
+nmap <leader>v :vsplit<CR> <C-w><C-w>
+nmap <leader>s :split<CR> <C-w><C-w>
 
 " switch windows with <leader> w
 nmap <leader>w <C-w><C-w>
@@ -189,13 +190,16 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Color
-colorscheme railscasts
+"colorscheme railscasts
+"colorscheme distinguished
+colorscheme vividchalk
+"colorscheme codeschool
 
 " NERDTree
 :noremap <leader>n :NERDTreeToggle<cr>
 
 " fuzzyfinder textmate
-map <leader>h :FuzzyFinderTextMate<cr>
-let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
+"map <leader>h :FuzzyFinderTextMate<cr>
+"let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
 
 set tags=./tags
