@@ -12,8 +12,13 @@ Plugin 'gmarik/Vundle.vim'
 " Bundle 'wincent/Command-T'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-surround'
+" Commands for vim-surround
+" cs"' :: Replace double quotes with single
+" cs'" :: Replace single with double quotes
+" ds"  :: Strip leading and trailing double quotes
+Bundle 'tpope/vim-repeat' 
+" vim-repeat allows . to repeat changes to surrounding quotes
 Bundle 'tpope/vim-fugitive'
-"Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'scrooloose/nerdtree'
 "Plugin 'rking/ag'
@@ -30,6 +35,8 @@ Bundle 'tomtom/tcomment_vim'
 " gcc :: Toggle comment for the curent line
 " gc{motion} ::Toggle comments for motion
 Bundle 'kien/ctrlp.vim'
+Bundle 'bling/vim-bufferline'
+Bundle 'bling/vim-airline'
 
 call vundle#end()            " required
 
@@ -77,6 +84,15 @@ set statusline+=%<%P                         " file position
 "set statusline+=%{fugitive#statusline()}
 
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+
+function! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//ge
+  call cursor(l, c)
+endfunction
+
+autocmd FileType ruby,eruby,cucumber autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 runtime! macros/matchit.vim
 
@@ -169,6 +185,15 @@ map <Leader>sv :RSview
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+" filetype plugin ~/.vim/ftplugin/ruby_bashrockets.vim
+" works on a range if selected, otherwise current line
+" hn :: HashNew :: New style ruby hashes
+" ho :: HashOld :: Old style ruby hashes
+nnoremap hn :Bashrockets<CR>
+nnoremap ho :Hashrockets<CR>
+vnoremap hn :Bashrockets<CR>
+vnoremap ho :Hashrockets<CR>
+
 " Display extra whitespace
 " set listchars=trail:.,tab:>-
 " set list
@@ -189,11 +214,33 @@ nnoremap ; :
 vnoremap < <gv
 vnoremap > >gv
 
+set t_Co=256
 " Color
 "colorscheme railscasts
 "colorscheme distinguished
 colorscheme vividchalk
 "colorscheme codeschool
+
+
+" let g:airline#extensions#bufferline#enabled = 1
+" let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
+let g:bufferline_echo = 0
+" let g:airline_theme = 'vividchalk'
+let g:airline_section_c = ''
+
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+
 
 " NERDTree
 :noremap <leader>n :NERDTreeToggle<cr>
