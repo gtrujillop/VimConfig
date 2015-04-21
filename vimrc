@@ -29,7 +29,7 @@ Bundle 'scrooloose/nerdtree'
 "Bundle 'tpope/vim-git'
 "Bundle 'godlygeek/tabular'
 "Bundle 'matchit.zip'
-Bundle 'fholgado/minibufexpl.vim'
+"Bundle 'fholgado/minibufexpl.vim'
 Bundle 'tomtom/tcomment_vim'
 " Commands for tcomment_vim
 " gcc :: Toggle comment for the curent line
@@ -37,6 +37,8 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-bufferline'
 Bundle 'bling/vim-airline'
+Bundle 'vhladama/vim-rubyhash'
+Bundle 'Yggdroot/indentLine'
 
 call vundle#end()            " required
 
@@ -229,6 +231,7 @@ let g:airline#extensions#tabline#show_buffers = 1
 let g:bufferline_echo = 0
 " let g:airline_theme = 'vividchalk'
 let g:airline_section_c = ''
+let g:airline_powerline_fonts = 1
 
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 nmap <leader>1 <Plug>AirlineSelectTab1
@@ -240,7 +243,9 @@ nmap <leader>6 <Plug>AirlineSelectTab6
 nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
-
+"IndentLine
+let g:indentLine_color_term = 239
+let g:indentLine_char = '¦'
 
 " NERDTree
 :noremap <leader>n :NERDTreeToggle<cr>
