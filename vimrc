@@ -5,6 +5,7 @@ filetype off           " Enable filetype detection
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+let $JS_CMD='node'
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
  
@@ -21,6 +22,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'scrooloose/nerdtree'
+Bundle 'wookiehangover/jshint.vim'
 "Plugin 'rking/ag'
 "Bundle 'jpo/vim-railscasts-theme'
 
@@ -39,6 +41,8 @@ Bundle 'bling/vim-bufferline'
 Bundle 'bling/vim-airline'
 Bundle 'vhladama/vim-rubyhash'
 Bundle 'Yggdroot/indentLine'
+Bundle 'bbatsov/rubocop'
+Bundle 'ngmy/vim-rubocop'
 
 call vundle#end()            " required
 
@@ -249,6 +253,12 @@ let g:indentLine_char = '¦'
 
 " NERDTree
 :noremap <leader>n :NERDTreeToggle<cr>
+
+"Rubocop config
+let g:vimrobocop_config = '~/ruby-style-guide/vhl-rubocop.yml'
+let g:vimrubocop_keymap = 0
+nmap <Leader>r :RuboCop<CR>
+
 
 " fuzzyfinder textmate
 "map <leader>h :FuzzyFinderTextMate<cr>
